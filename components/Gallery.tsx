@@ -73,7 +73,7 @@ export default function Gallery() {
       </div>
 
       {/* Lightbox */}
-      {selected !== null && (
+      {selected !== null && IMAGES[selected] && (
         <div
           className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4"
           onClick={closeLightbox}
@@ -103,8 +103,8 @@ export default function Gallery() {
             onClick={(e) => e.stopPropagation()}
           >
             <Image
-              src={IMAGES[selected].src}
-              alt={IMAGES[selected].alt}
+              src={IMAGES[selected]!.src}
+              alt={IMAGES[selected]!.alt}
               fill
               className="object-contain"
               sizes="90vw"
